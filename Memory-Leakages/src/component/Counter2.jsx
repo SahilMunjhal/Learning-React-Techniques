@@ -1,20 +1,27 @@
-// import {useState,useEffect } from "react";
+import {useState,useEffect,useRef} from "react";
 
-// export const Counter2=()=>{
-//    const [count,setCount]=useState(0);
+export const Counter2=()=>{
 
-//    useEffect(()=>{
-      
-//       setInterval(()=>{
-//            setCount(pre=>pre+1);
-//            console.log(count);
-//        },2000);
-//    },[])
+    const [count,setCount]=useState(0);
+    const ref=useRef();
+    
+    useEffect(()=>{
+   
+      ref.current=setInterval(()=>{
+            setCount(pre=>pre+1);
+            console.log("counter 2",count);
+        },1000);
 
-//     return(
-//         <div>
-//             <h1>WelCome to Counter2 Component </h1>
-//             <h2>Count2 : {count}</h2>
-//         </div>
-//     )
-// }
+        return ()=>{
+            clearInterval(ref.current);
+        };
+        
+    });
+
+    return(
+        <div>
+            <h1>Welcome to the Counter 2 Comonent</h1>
+            <h1>Count : {count}</h1>
+        </div>
+    )
+};

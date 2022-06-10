@@ -2,6 +2,8 @@ import { useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
 import {Counter1} from "./component/Counter1";
+import {Counter2} from "./component/Counter2";
+
 
 function App() {
    const[state,setState]=useState(true); 
@@ -14,7 +16,7 @@ function App() {
     <div className="App">
        <h1>Welocome to memory lekage components</h1>
        <button onClick={handleToggle}>Toggle the Counter</button>
-       <Counter1/>
+       {state?<Counter1/>:<Counter2/>}
     </div>
   )
 }

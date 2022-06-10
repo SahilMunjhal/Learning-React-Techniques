@@ -1,20 +1,21 @@
-import {useState,useEffect} from "react";
+import {useState,useEffect,useRef} from "react";
 
 export const Counter1=()=>{
 
     const [count,setCount]=useState(0);
+    const ref=useRef();
     
     useEffect(()=>{
-       let id= setInterval(()=>{
-            setCount((pre)=>pre+1);
-            console.log(count);
-        },1000)
+        
+      ref.current=setInterval(()=>{
+            setCount(pre=>pre+1);
+            console.log("Counter 1",count);
+        },1000)  
 
-        // return (()=>{
-        //     console.log(count);
-        //     clearInterval(id);
-        // })
-    },[]);
+        return ()=>{
+            clearInterval(ref.current);
+        }
+    });
 
     return(
         <div>
