@@ -11,4 +11,4 @@ export class Regular extends Component {
   }
 }
 
-export default Regular
+export default Regular;
