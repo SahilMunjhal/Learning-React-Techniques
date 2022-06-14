@@ -1,0 +1,144 @@
+============== > What is TypeScript ?
+
+--------- > TypeScript is JavaScript with added syntax for types.TypeScripts added the static type in JavaScript.
+
+JavaScript is loosely-typed-language.So JavaScript only check the type of any variable at the Run-Time OR 
+we can say at the time of execution.
+
+TypeScript has the ablity to check the type of variables at the time of compilation rather the runtime.
+
+
+
+
+
+
+
+
+
+================ > What is Error Boundary ?
+
+-------- > Error Boundary are the React-Components that catches JavaScript errors in their child Component tree 
+log those errors and display a fallback UI instead of the Component tree crashed.
+
+Error boundaries do not catch errors for:
+
+------- > Event handlers (learn more).
+------- > Asynchronous code (e.g. setTimeout or requestAnimationFrame callbacks).
+------- > Server side rendering.
+------- > Errors thrown in the error boundary itself (rather than its children).
+
+Error Boundary are the custom errors that are used to handle the JavaScript errors.In JavaScript errors we doesn't want
+our whole app is crashed so in that case we can use the Error Boundary.
+
+
+=============== > What is Memory Leakage in ReactJS ?
+
+A memory leakage is a type of resource leaks that occurs when a resource is handled incorrecly.
+
+A memory leakage happens when an object is stored  in memory but cannot be accesssed by the running code.
+
+Memory leaks in React applications are primarily a result of not cancelling subscriptions made when a component
+was mounted before the component gets unmounted. These subscriptions could be a DOM Event listener, a WebSocket
+subscription, or even a request to an API.
+
+Example -------- > On mounting of timer Component,We have started a timer in use-Effect by using a setInterval
+But while unmounted the timer function,The set-Interval runs even after the Unmounting of timer Component.
+
+2nd Example ------ > So,we have make a network request on the mounting of a component but while the data 
+comes from the network request,we have already unmount the component.
+
+
+============== > Difference between Link and NavLink ?
+
+----------- > Links are known as HyperLinks.NavLink is used when someone wants to highLights the current
+Link.It is used to style the active routes so that user knows on which page he or she is currently browsing
+on the website.
+
+NavLink is used with the activeClassName attribute.
+
+<NavLink to="/home" activeClassName="active" >Home</NavLink><br/>
+<NavLink to="/home" activeStyle={{color:"red"}} >Home</NavLink><br/>
+
+
+
+===================== > What is the Difference between regular functions and arrow functions ?
+
+-------- > Arrow functions do not have their own this.
+
+let user = {
+    name: "GFG",
+    gfg1:() => {
+        console.log("hello " + this.name); // no 'this' binding here
+    },
+    gfg2(){       
+        console.log("Welcome to " + this.name); // 'this' binding works here
+    }  
+ };
+user.gfg1();
+user.gfg2();
+
+(2). Arguments objects are not available in arrow functions, but are available in regular functions.
+
+Example using regular ():-
+
+let user = {      
+    show(){
+        console.log(arguments);
+    }
+};
+user.show(1, 2, 3);
+
+
+(3).  Since regular functions are constructible, they can be called using the ‘new’ keyword. However, the 
+arrow functions are only ‘callable’ and not constructible. Thus, we will get a run-time error on trying to
+construct a non-constructible arrow functions using the new keyword.
+
+let x = function(){
+    console.log(arguments);
+};
+
+new x =(1,2,3);
+
+
+let x = ()=> {
+    console.log(arguments);
+};
+
+new x(1,2,3);
+
+Give Errors in this case.
+
+
+
+===================== > Difference between Class and Functional Componennt ? 
+
+--------- > There is no difference between class and functional components. Before the introduction of hooks 
+functional components are stateless,we cannot manages the states.
+
+(1.) A functional component is just a Plain JavaScript pure function that accepts props as an argument and 
+returns a React element(JSX).
+
+A class component requires we have to extend from React. Component and create a render function which returns a
+React element.
+
+(2) There is no render method used in functional components.
+
+It must have the render() method returning JSX.
+
+(3). Functional component run from top to bottom.
+
+Class component has different life cycle method and invoked depending on phase of class component.
+
+(4.) Class Components contain the features of Error Boundary while functional components doesnot contain 
+this features.
+
+
+
+(1). Azyl ------------ > 
+(2). Sprint ---------- >
+(3). Ticketing in JIRA software.
+
+
+============= > What is Git ?
+
+

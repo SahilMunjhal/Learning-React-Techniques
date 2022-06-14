@@ -1,0 +1,242 @@
+============== > How to run the typeScript ?
+
+--------- > tsc <fileName>
+
+export {} ---- > Otherwise it will treat as script rather than module. Script and module both has different
+scopes so we have to export at the top of the file so than it consider as module scope.
+
+
+
+
+=========== > What is typeScript and Why we have to used typeScript ?
+
+---------- > TypeScript is JavaScript with added syntax for types.TypeScripts added the static type in JavaScript.
+
+JavaScript is loosely-typed-language.So JavaScript only check the type of any variable at the Run-Time OR 
+we can say at the time of execution.
+
+TypeScript has the ablity to check the type of variables at the time of compilation rather the runtime.
+
+Compare to the JavaScript TypeScript has lessBug at the execution time.
+
+TypeScript = Adds new feature + JavaScript.
+
+=============== > What is Type Assignment in TypeScript ?
+
+There are main two ways to assign a type :
+
+(1.) Explicit
+(2.) Implicit
+
+Explicit Example ------ > let firstName: string = "Dylan";
+
+Implicit Example ------ > TypeScript will "guess" the type, based on the assigned value.
+
+let firstName = "Dylan";
+
+
+
+
+
+============ > Variables in TypeScript ?
+
+------- > How to deal with the array .
+
+let arr : number[]=[1,4,2,5,6];
+
+let arr : Array<Number>=[3,5,2,5,2,3]
+
+let arr : [string,Number]=["sahil",4];
+
+
+========== > How to assign the types to objects in TypeScripts ?
+
+------ > Ist Way :: const car: { type: string, model: string, year: number } = {
+  type: "Toyota",
+  model: "Corolla",
+  year: 2009
+};
+
+2nd Way :: const MyObj : { [index: string]: number } = {};
+
+3rd Way :: const person1 : {
+    name:string,
+    age:number,
+    hobbies:string[],
+}={
+    name : "sahil",
+    age :25,
+    hobbies : ["cricket","kabaddi"]
+}
+
+for(const hobby of person1.hobbies){
+    console.log(hobby);
+};
+
+
+=========== > Tuples in TypeScript ?
+
+------ > A tuple is a typed array with a pre-defined length and types for each index.
+
+let ourTuple: [number, boolean, string];
+
+ourTuple = [5, false, 'Coding God was here'];
+
+
+============ > Enum in TypeScript ?
+
+------- > An enum is a special "class" that represents a group of constants (unchangeable variables).
+
+Ist Example ---- > enum CardinalDirections {
+  North,
+  East,
+  South,
+  West
+}
+let currentDirection = CardinalDirections.North;
+// logs 0
+console.log(currentDirection);
+// throws error as 'North' is not a valid enum
+currentDirection = 'North'; // Error: "North" is not assignable to type 'CardinalDirections'.
+
+
+============= > Union in TypeScript ?
+
+------- > Union types are used when a value can be more than a single type.
+
+For Example ---- > function printStatusCode(code: string | number) {
+  console.log(`My status code is ${code}.`)
+}
+printStatusCode(404);
+printStatusCode('404');
+
+
+
+========== > Functions in typeScript ?
+
+function add(num1:number,num2:number=10):number{
+    return num1+num2;
+}
+
+add(5);
+
+
+2nd Example --------- > When the function doesnot have return statement the deafault return value should be
+void.When the function have return statement but it is returning nothing,then it should be undefined.
+
+
+function voidValue():void{
+    console.log("Void-Value");
+}
+
+voidValue();
+
+
+------ > Function as Type : 
+
+function type1(){
+    console.log("Function as type");
+}
+
+let variable : Function;
+
+variable=type1;
+
+variable=5; // We cannot assign value to the variable as it should be function type //
+
+variable();
+
+---- > How to define specific function type;
+
+function type1(a:number,b:number){
+    return a+b;
+}
+
+let variable : (a:number,b:number)=>number;
+variable=type1;
+
+Now,it will take two arguments which should be numbers and will return number as type.
+
+console.log(variable(5,8));
+
+================= > Interface in TypeScript ?
+
+-------- > 
+
+
+For Example =  function fullName(person:Person){
+    console.log(person.firstName+" "+person.lastName);
+}
+
+interface Person{
+    firstName:string,
+    lastName?:string
+}
+
+let person={
+    firstName:"sahil",
+    lastName:"munjhal"
+}
+
+fullName(person);
+
+
+
+
+================= > Classes in TypeScript ?
+
+-------- > class Employee {
+    employeName : string;
+
+    constructor(name:string){
+        this.employeName=name;
+    }
+
+    greet(){
+        console.log(`Good Morning ${this.employeName}`)
+    }
+};
+
+let employe1=new Employee("sahil");
+
+
+class Manager extends Employee{
+    constructor(managerName:string){
+        super(managerName)
+    }
+
+    delebateWork(){
+        console.log("Working Delebrating Tasks");
+    }
+};
+
+
+let manager1=new Manager("sahil");
+
+console.log(manager1.employeName);
+console.log(manager1.delebateWork());
+console.log(manager1.greet());
+
+Special KeyWords : We can use Public,Private and Protactive methods on the Classes.  --------- > These are 
+called access modifiers on the classes.
+
+
+Unknown VS ANY ---- >
+
+let userName:string;
+let userInput:unknown;
+
+userName="sahil";
+userInput=25;
+
+userName=userInput; // We cannot assign userName=userInput in case of Unknown //
+
+
+let userName:string;
+let userInput:any;
+
+userName="sahil";
+userInput=25;
+
+userName=userInput; // We can assign userName=userInput in case of any //
+

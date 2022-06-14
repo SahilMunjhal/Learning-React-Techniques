@@ -1,8 +1,0 @@
-============== > What is TypeScript ?
-
---------- > TypeScript is JavaScript with added syntax for types.TypeScripts added the static type in JavaScript.
-
-JavaScript is loosely-typed-language.So JavaScript only check the type of any variable at the Run-Time OR 
-we can say at the time of execution.
-
-TypeScript has the ablity to check the type of variables at the time of compilation rather the runtime.
