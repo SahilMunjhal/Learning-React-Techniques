@@ -1,0 +1,28 @@
+input{
+    height: 30px;
+    width: 300px;
+    display: block;
+    margin: 15px auto;
+}
+
+.room-button{
+    height: 40px;
+    width: 120px;
+    background-color: black;
+    color: white;
+    margin: 0px 70px;
+}
+
+.room-heading{
+    margin: 10px 50px;
+}
+
+.room-body{
+    text-align: center;
+}
+
+.room-img{
+    height: 100px;
+    width: 160px;
+    margin-top: 10px;
+}

@@ -1,0 +1,29 @@
+.room-footer{
+    display: flex;
+    gap: 20px;
+}
+
+.chat-footer-input{
+  height: 40px;
+  width: 340px;
+  margin-right: 0px;
+  margin-left: 400px;
+}
+
+.chat-button{
+    height: 50px;
+    width: 120px;
+    background-color: black;
+    color: white;
+    margin: 13px;
+    border-radius: 12px;
+}
+
+.message-body{
+    width: 800px;
+    height: 500px;
+    background-color: red;
+    margin: auto;
+    margin-top: 30px;
+    overflow-y: auto;  
+}

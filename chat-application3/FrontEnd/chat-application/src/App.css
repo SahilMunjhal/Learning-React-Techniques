@@ -1,0 +1,13 @@
+.message-left{
+   float: left;
+   clear: both;
+   height: 40px;
+   width: 400px;
+}
+
+.message-right{
+  float: right;
+  clear: both;
+  height: 40px;
+  width: 400px;
+}

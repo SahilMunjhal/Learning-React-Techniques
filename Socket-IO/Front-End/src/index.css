@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(black ,grey,white);
+  height: 650px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.Chat-box-container{
+  width: 30%;
+  height: 500px;
+  background-color: rgba(117, 170, 250, 0.514);
+  margin: auto;
+  margin-top: 6vh;
+  border-radius: 6px;
+}
+.input-emoji-width-container{
+  width: 30%;
+  margin: auto;
+}
+.left-chat-box{
+  width: 100px;
+  margin: 30px;
+  border-radius: 15px;
+  background:#00bfb6;
+  color: #fff;
+  padding: 16px;
+  text-align: center;
+  font-weight: 600;
+  font-family: arial;
+  position: relative;
+  transform: translateY(20px);
+  word-wrap: break-word;
+}
+
+.left-chat-box::before{
+  content: '';
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 15px solid transparent;
+  border-right: 15px solid #00bfb6;
+  border-top: 15px solid #00bfb6;
+  border-bottom: 15px solid transparent;
+  left: -16px;
+  top: 0px;
+}
+.scrollBottmWrapper{
+height: 100%;
+box-sizing: border-box;
+}
+
+ /* right */
+.right-chat-box{
+  width: 100px;
+  margin: 30px;
+  border-radius: 15px;
+  background:#00bfb6;
+  color: #fff;
+  padding: 16px;
+  text-align: center;
+  font-weight: 600;
+  font-family: arial;
+  position: relative;
+  transform: translateY(20px) translateX(250px);
+  word-wrap: break-word;
+}
+
+.right-chat-box::before{
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 15px solid #00bfb6;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #00bfb6;
+    border-bottom: 15px solid transparent;
+    right: -16px;
+    top: 0px;
+  }
