@@ -1,23 +1,35 @@
-import  io  from "socket.io-client";
+import { io }  from "socket.io-client";
 const socket = io("http://localhost:5000");
 import "./chat.css";
 import { useEffect, useState } from "react";
-const name=prompt("Enter your name");
 
 export const Chat=()=>{
     
+    const[name,setName]=useState("");
     const[message,setMessage]=useState('');
-    const[incoming,setIncoming]=useState('');
     const[chat,setChat]=useState([]);
+
+    console.log(chat);
 
     const handleMessage=(e)=>{
         setMessage(e.target.value);
-    }
+    };
 
-    const handleForm=(e)=>{
+    useEffect(()=>{
+        const temp=prompt("Enter your name");
+        setName(temp);
+    },[]);
+
+    const handleForm=async (e)=>{
         e.preventDefault();
-        socket.emit("message",{message,user:name});
-        setMessage('');
+        const messageInfo={
+            message,
+            name
+        };
+
+       await socket.emit("message",messageInfo);
+       setChat([...chat,messageInfo]);
+       setMessage('');
     }
 
     useEffect(()=>{
@@ -25,7 +37,7 @@ export const Chat=()=>{
            console.log(message);
            setChat([...chat,message]);  
        });
-    },[]);
+    },[socket]);
 
   return(
       <div>
@@ -34,8 +46,16 @@ export const Chat=()=>{
                className="chat-image" />
           </nav>
           <div className="chat-container">
-              <div className="message left">{message}</div>
-              <div className="message right">{incoming}</div>
+            {chat.map((userInfo)=>{
+               return(
+                 <div>
+                     {userInfo.name===name?<div className="message left">{userInfo.message}</div>:
+                        <div className="message right">{userInfo.message}</div>
+                     }
+                 </div>
+               )
+            })
+        }
           </div>
           <div className="chat-sent">
              <form action="" className="chat-form" onSubmit={handleForm}>
