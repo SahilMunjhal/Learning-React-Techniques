@@ -1,5 +1,5 @@
 {
-  "name": "chat-application",
+  "name": "usereducer",
   "private": true,
   "version": "0.0.0",
   "scripts": {
@@ -8,11 +8,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "emoji-picker-react": "^3.5.1",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "socket.io-client": "^4.5.1",
-    "use-sound": "^4.0.1"
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",

@@ -1,0 +1,44 @@
+=================== > How to do Stripe Integration ?
+
+----------- > Firstly install the NPM stripe library.
+
+2. We have required API keys to connect with the Stripe Integartion.
+3. There are two keys.
+
+Secret Keys(On the Back_End Side) and Publishable Keys(On the Front-End Side).
+
+const stripe = require('stripe')('secret_key');
+
+4. On the Products Side two things will come --- >
+product and token.
+we have to genrate idempontencyKey from uuid().
+
+return stripe.customers.create({
+    email:token.email,
+    source:token.id,
+}).then(customre=>{
+    stripe.charges.create({
+        amount:product.price,
+        current:'usd',
+        customre:customre.id,
+        reciept_email:token.email,
+        description:`purchase of ${product.name}`
+        shipping:{
+            name:token.card.name,
+            address:{
+                country:token.card.address_country
+            }
+        }
+    },{idempontencyKey})
+});
+.then(result=>res.status(200).json(result))
+.catch(err=>console.log(err));
+
+
+5. On the Front-End Side ---------- >
+
+We have to use the react-stripe-checkout library.
+
+import StripeCheckout from "react-stripe-checkout';
+
+<StripeCheckout stripeKey="" token="" name=""/>

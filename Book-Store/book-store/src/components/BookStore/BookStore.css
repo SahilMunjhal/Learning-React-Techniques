@@ -1,0 +1,50 @@
+.books-list{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 400px;
+    gap: 30px;
+}
+
+.book-slot{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    text-align: left;
+    padding: 20px 20px;
+}
+
+.book-header-img{
+    margin: 20px 500px;
+    height: 180px;
+    width: 350px;
+}
+
+.book-slot-title{
+    font-size:22px;
+    color: crimson;
+    margin-right: 10px;
+}
+
+.book-name span{
+    margin-left: -25px;
+    text-transform: capitalize  ;
+}
+
+.book-price{
+    display: flex;
+    margin-top: 0px;
+    gap: 30px;
+}
+
+.book-slot-img{
+    height: 200px;
+    width: 300px;
+}
+
+#book-slot-price{
+   font-size: 20px;
+   transform: translateY(-5px);
+   display: inline-block;
+}
+
+.book-slot-book-name{
+    text-transform: capitalize;
+}

@@ -1,20 +1,3 @@
-============== > What is TypeScript ?
-
---------- > TypeScript is JavaScript with added syntax for types.TypeScripts added the static type in JavaScript.
-
-JavaScript is loosely-typed-language.So JavaScript only check the type of any variable at the Run-Time OR 
-we can say at the time of execution.
-
-TypeScript has the ablity to check the type of variables at the time of compilation rather the runtime.
-
-
-
-
-
-
-
-
-
 ================ > What is Error Boundary ?
 
 -------- > Error Boundary are the React-Components that catches JavaScript errors in their child Component tree 
@@ -22,7 +5,7 @@ log those errors and display a fallback UI instead of the Component tree crashed
 
 Error boundaries do not catch errors for:
 
-------- > Event handlers (learn more).
+------- > Event handlers .
 ------- > Asynchronous code (e.g. setTimeout or requestAnimationFrame callbacks).
 ------- > Server side rendering.
 ------- > Errors thrown in the error boundary itself (rather than its children).
@@ -138,7 +121,106 @@ this features.
 (2). Sprint ---------- >
 (3). Ticketing in JIRA software.
 
-
 ============= > What is Git ?
 
 
+
+
+
+=========== > What are the ProtoTypes ?
+
+Prototypes are the mechanism by which a JavaScript objects inherit feature from one object to another.
+
+For Example ------- >
+
+     const obj1={
+        first_name:"sahil",
+        age:25,
+        print(){
+          console.log(this.name);
+        }
+     };
+
+   let obj2=Object.create(obj1);
+   obj2.lastName="Munjhal";
+
+======== > What are constructor and class functions ?
+
+Construction function example ---------- > 
+
+function Constructor(name,age){
+     this.name=name;
+     this.age=age;
+}
+
+let obj1=new Constructor("sahil",25);
+console.log(obj1);
+let obj2=new Constructor("munjhal",27);
+console.log(obj2);
+
+Class function example ---------- >
+
+class Rectangle{
+     constructor(height,width){
+          this.height=height;
+          this.width=width;
+     }
+     getArea(){
+         console.log(this.height,this.width);
+         return this.height*this.width;
+     }
+};
+
+rectangle1=new Rectangle(10,20);
+
+console.log(rectangle1.getArea());
+
+
+================= > What is UseReducer ?
+
+UseReducer is a hook that is used for state management.It is alternative to useState.UseState is build
+using useReducer.
+
+const[currentState,dispatch]=useReducer(reducer,intialstate);
+
+const reducer=(state,action)=>{
+
+};
+
+const intialstate={
+    counter:0;
+    todo:[];
+}
+
+
+
+=========== > What is Destructuring ?
+
+----- > Destructuring is a JavaScript expression that allows us to extract data from arrays, objects, and maps
+ and set them into new, distinct variables. Destructuring allows us to extract multiple properties, or items, 
+ from an array​ at a time.
+
+ var employee = {   Object we want to destructure
+    firstname: 'Jon',
+    lastname: 'Snow',
+    dateofbirth: '1990'
+};
+
+// Destructuring the object into variables with
+// different names than the object variables
+var { firstname: fn, lastname: ln, dateofbirth: dob } = employee;
+console.log( fn, ln, dob);
+
+============ > What is material UI in React ?
+
+----- > Material UI is an open-source, front-end framework for React components . It is built using Less. 
+Less (stands for Leaner Style Sheets), is a backward-compatible language extension for CSS. Material UI is
+based on Google’s Material Design to provide a high-quality, digital experience while developing front-end
+graphics. Material Design focuses on providing bold and crisp designs – it builds textures by focusing on
+how the components cast shadows and reflect light.
+
+There are a few key advantages of designing with Material UI:
+
+Material UI is well documented and this makes it very easy to develop with them. Material UI stays recent with
+regular updates.The components throughout are consistent in design and color tones, which allows the developed
+application/webpage to look aesthetically appealing.

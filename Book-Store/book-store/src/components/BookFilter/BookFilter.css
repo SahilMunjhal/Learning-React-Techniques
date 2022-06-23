@@ -1,0 +1,17 @@
+.book-filter{
+    height: 80px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 300px;
+    padding: 10px 10px;
+}
+
+.book-filter-title{
+    color: blue;
+}
+
+.filter-search{
+    height: 40px;
+    width: 300px;
+    margin: 10px 0px;
+}
